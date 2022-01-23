@@ -32,3 +32,10 @@ for ID in tqdm(players_ids):
         players_stats = pd.concat([players_stats,player_career],axis=0,ignore_index=True)
     except:
         error_log.append(ID)
+
+players_stats
+#Export player_stats into a csv
+players_stats.to_csv('player_data.csv')
+#Export list of players that errrored out
+error_df = pd.DataFrame(error_log)
+error_df.to_csv('error_log.csv')
